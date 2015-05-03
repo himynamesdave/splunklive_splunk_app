@@ -1,0 +1,153 @@
+<dashboard script="autodiscover.js">
+  <label>#SplunkLive Twitter Stream</label>
+  <description>Welcome to Splunk&gt;live! Post a tweet with either the hashtag #SplunkLive and get your face on the big screen.</description>
+  <row>
+    <panel>
+      <single>
+        <title>Latest Tweet</title>
+        <search>
+          <query>index="splunklive" sourcetype="tweet"
+| rename user.screen_name as userScreenName
+| eval userTweet = "@".userScreenName.": ".text
+| stats latest(userTweet) AS latestUserTweet</query>
+          <earliest>rt-30m</earliest>
+          <latest>rt</latest>
+        </search>
+        <option name="wrap">undefined</option>
+        <option name="rowNumbers">undefined</option>
+        <option name="drilldown">none</option>
+        <option name="linkView">search</option>
+      </single>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <single>
+        <title>Total Tweets Today</title>
+        <search>
+          <query>index="splunklive" sourcetype="tweet"
+| stats count AS totalTweets</query>
+          <earliest>rt-d@d</earliest>
+          <latest>rt</latest>
+        </search>
+        <option name="wrap">undefined</option>
+        <option name="rowNumbers">undefined</option>
+        <option name="drilldown">none</option>
+        <option name="linkView">search</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>Number of Tweeters</title>
+        <search>
+          <query>index="splunklive" sourcetype="tweet"
+| stats dc("user.id") AS uniqueCountOfTweeters</query>
+          <earliest>rt-0@d</earliest>
+          <latest>rt</latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="drilldown">none</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="count">10</option>
+        <option name="linkView">search</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>Number of Tweets Mentioning Buttercup</title>
+        <search>
+          <query>index="splunklive" sourcetype="tweet" *buttercup*
+| stats count</query>
+          <earliest>rt-0@d</earliest>
+          <latest>rt</latest>
+        </search>
+        <option name="wrap">undefined</option>
+        <option name="rowNumbers">undefined</option>
+        <option name="drilldown">none</option>
+        <option name="linkView">search</option>
+      </single>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <html>
+        <h2>Top Hashtags</h2>
+            <div id="tagcloud-search" class="splunk-manager splunk-searchmanager " data-require="splunkjs/mvc/searchmanager" data-options="{                         &quot;app&quot;: &quot;splunklive&quot;,                         &quot;preview&quot;: true,                         &quot;search&quot;: &quot;| savedsearch top20HashtagsByCount&quot;,                         &quot;earliest_time&quot;: &quot;@d&quot;                     }">
+            </div>
+            <div id="tagcloud" class="splunk-view" data-require="app/splunklive/components/tagcloud/tagcloud" data-options="{                         &quot;minFontSize&quot;: 10,                         &quot;maxFontSize&quot;: 48,                         &quot;managerid&quot;: &quot;tagcloud-search&quot;,                         &quot;valueField&quot;: &quot;hashtagCount&quot;,                         &quot;labelField&quot;: &quot;hashtags&quot;                      }">
+            </div>
+        </html>
+    </panel>
+    <panel>
+      <html>
+        <h2>Top Tweeters</h2>
+            <div id="bubbleSearch" class="splunk-manager" data-require="splunkjs/mvc/searchmanager" data-options="{                     &quot;search&quot;: &quot;| savedsearch top10TwitterUsersByCount&quot;,                     &quot;earliest_time&quot;: &quot;@d&quot;,                     &quot;status_buckets&quot;: 0,                     &quot;cancelOnUnload&quot;: true,                     &quot;auto_cancel&quot;: 90,                     &quot;preview&quot;: true                  }">
+            </div>
+            <div id="bubbleChart" class="splunk-view" data-require="app/splunklive/components/bubblechart/bubblechart" data-options="{                     &quot;managerid&quot;: &quot;bubbleSearch&quot;,      &quot;nameField&quot;: &quot;userName&quot;,                     &quot;categoryField&quot;: &quot;userName&quot;,                     &quot;valueField&quot;: &quot;tweetCount&quot;,                     &quot;height&quot;: 450                  }">
+            </div>
+        </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <chart>
+        <title>Top Tweeter Locations</title>
+        <search ref="top10UserSpecifiedLocation"></search>
+        <option name="wrap">undefined</option>
+        <option name="rowNumbers">undefined</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
+        <option name="charting.axisTitleX.visibility">visible</option>
+        <option name="charting.axisTitleY.visibility">visible</option>
+        <option name="charting.axisTitleY2.visibility">visible</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.enabled">false</option>
+        <option name="charting.axisY2.scale">inherit</option>
+        <option name="charting.chart">pie</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">10</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">gaps</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">default</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">all</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.placement">right</option>
+      </chart>
+    </panel>
+    <panel>
+      <chart>
+        <title>Tweet Volume By Time</title>
+        <search ref="totalTweetVolumeByTime"></search>
+        <option name="charting.axisY2.enabled">false</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
+        <option name="charting.axisTitleX.visibility">visible</option>
+        <option name="charting.axisTitleY.visibility">visible</option>
+        <option name="charting.axisTitleY2.visibility">visible</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.scale">inherit</option>
+        <option name="charting.chart">area</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">10</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">gaps</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">default</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">all</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.placement">none</option>
+        <option name="charting.axisTitleX.text">Time</option>
+        <option name="charting.axisTitleY.text"># Tweets</option>
+        <option name="charting.seriesColors">[0x65A637]</option>
+      </chart>
+    </panel>
+  </row>
+</dashboard>
