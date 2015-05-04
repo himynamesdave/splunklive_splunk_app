@@ -1,6 +1,6 @@
 <dashboard script="autodiscover.js">
   <label>#SplunkLive Twitter Stream</label>
-  <description>Welcome to Splunk&gt;live! Post a tweet with either the hashtag #SplunkLive and get your face on the big screen.</description>
+  <description>Welcome to Splunk&gt;live! Post a tweet with the hashtag #SplunkLive and get on the big screen.</description>
   <row>
     <panel>
       <single>
