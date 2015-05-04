@@ -4,6 +4,8 @@ Splunk>live! App
 Overview:
 ---
 
+![SplunkLive App](https://raw.githubusercontent.com/himynamesdave/splunklive_splunk_app/master/static/screenshot.jpeg)
+
 An app that visualises tweets containing #splunklive.
 
 Instructions:
