@@ -14,8 +14,8 @@ define(function(require, module) {
         options: {
             labelField: 'label',
             valueField: 'count',
-            minFontSize: 10,
-            maxFontSize: 42,
+            minFontSize: 8,
+            maxFontSize: 36,
             data: 'preview'
         },
         output_mode: 'json',
