@@ -17,10 +17,7 @@ Instructions:
 
 3. Get your Twitter API keys. [Instructions on how to do this here: steps 1-2](http://blogs.splunk.com/2014/07/03/splunking-social-media-tracking-tweets/).
 
-4. Add your Twitter API kets to the to the "SplunkLiveTwitterFeed" REST input. To do this navigate to Settings > Data Inputs > REST > "SplunkLiveTwitterFeed". Replace the missing API keys with the ones you have just generated during step 2, then hit "save".
-
-Note: you can also change the tweets collected on this page. By default the app will track all tweets with the hashtag #splunklive. If you want to change the hashtag, or add others, simply change the URL arguments field. e.g:
-
+4. Add your Twitter API kets to the to the "SplunkLiveTwitterFeed" REST input. To do this navigate to Settings > Data Inputs > REST > "SplunkLiveTwitterFeed". Replace the missing API keys with the ones you have just generated during step 2, then hit "save". Note: you can also change the tweets collected on this page. By default the app will track all tweets with the hashtag #splunklive. If you want to change the hashtag, or add others, simply change the URL arguments field. e.g:
 URL Arguments: track=#splunk,#bigdata,#mytag^stall_warnings=true
 
 5. Enable input. To do this navigate to Settings > Data Inputs > REST. For the "SplunkLiveTwitterFeed" select "Enable".
