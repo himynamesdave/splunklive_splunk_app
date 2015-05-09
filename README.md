@@ -11,7 +11,7 @@ An app that visualises tweets containing #splunklive.
 Instructions:
 ---
 
-1. Download and install the Splunk>live! App (https://github.com/himynamesdave/splunklive_splunk_app/raw/master/splunklive_splunk_app.spl) onto your Splunk Instance.
+1. Download and install the Splunk>live! App (https://github.com/himynamesdave/splunklive_splunk_app/raw/master/splunklive_splunk_app.tar.gz) onto your Splunk Instance.
 
 2. Download and install the Splunk REST API Modular Input (https://splunkbase.splunk.com/app/1546/) onto your Splunk Instance.
 
