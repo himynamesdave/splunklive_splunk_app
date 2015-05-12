@@ -1,0 +1,22 @@
+<form script="autodiscover.js" stylesheet="application.css">
+  <label>#SplunkLive Instagram Stream</label>
+  <description>Welcome to Splunk>live! Post a image on Instagram with the hashtag #SplunkLive and get on the big screen.</description>
+  <row>
+    <html>
+      <div id="imagepanel-search" 
+	    class="splunk-manager splunk-searchmanager" 
+		data-require="splunkjs/mvc/searchmanager" 
+		data-options='{                         
+			"app": "splunklive_splunk_app",                      
+			"search":  "tag=instagram tags{}=splunklive OR tags{}=splunk | dedup id | head 100 | fields images.standard_resolution.url | rename images.standard_resolution.url AS url",
+			"preview": false
+		}'/>
+      <div class="splunk-view" 
+        data-require="app/splunklive_splunk_app/components/imagepanel/imagegrid"
+        data-options='{
+          "managerid": "imagepanel-search",
+          "urlField": "url"
+    }'/>
+    </html>
+  </row>
+</form>
