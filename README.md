@@ -16,7 +16,7 @@ Download and install the Splunk>live! App (https://github.com/himynamesdave/splu
 
 **Install the "REST API Modular Input app**
 
-Copy the folder SPLUNK HOME/etc/apps/instagram/install/rest_ta to SPLUNK HOME/etc/apps/
+Copy the folder SPLUNK HOME/etc/apps/splunklive_splunk_app/install/rest_ta to SPLUNK HOME/etc/apps/
 
 This will install the official REST API modular input created by Damien Dallimore that is used for connecting to the Instagram API. This version of rest_ta includes some custom python response handlers to handle the Instagram API json format. These are not included in the REST API Modular input app that can be found on Splunkbase. 
 
