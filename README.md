@@ -2,9 +2,9 @@
 
 ##Overview:
 
-![SplunkLive App Twitter](https://raw.githubusercontent.com/himynamesdave/splunklive_splunk_app/master/static/screenshot-twitter.jpeg)
+![SplunkLive App Twitter](https://raw.githubusercontent.com/himynamesdave/splunklive_splunk_app/master/static/screenshot-twitter.jpg)
 
-![SplunkLive App Instagram](https://raw.githubusercontent.com/himynamesdave/splunklive_splunk_app/master/static/screenshot-instagram.jpeg)
+![SplunkLive App Instagram](https://raw.githubusercontent.com/himynamesdave/splunklive_splunk_app/master/static/screenshot-instagram.jpg)
 
 An app that visualises Tweets / Instagram images containing #splunklive & #splunk.
 
@@ -59,7 +59,7 @@ The entire process is described on this page](https://instagram.com/developer/au
 
 As we are using implicit authentication you can skip to the section called "Client-Side (implicit) authentication" which is described below under 3.1 and 3.2.
 
-In a browser paste the following URL, with CLIENT-ID and REDIRECT-URI replaced with the values created earlier (4b):
+In a browser paste the following URL, with CLIENT-ID and REDIRECT-URI replaced with the values created earlier:
 
 https://instagram.com/oauth/authorize/?client_id=CLIENT-ID&redirect_uri=REDIRECT-URI&response_type=token
 
