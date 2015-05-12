@@ -84,9 +84,9 @@ To do this navigate to Settings > Data Inputs > REST. For the "SplunkInstagramFe
 
 ##Final (important) step
 
-5. Restart Splunk.
+**Restart Splunk**
 
-6. Profit.
+**Profit**
 
 ##Top tip:
 
