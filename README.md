@@ -2,7 +2,9 @@
 
 ##Overview:
 
-![SplunkLive App](https://raw.githubusercontent.com/himynamesdave/splunklive_splunk_app/master/static/screenshot.jpeg)
+![SplunkLive App Twitter](https://raw.githubusercontent.com/himynamesdave/splunklive_splunk_app/master/static/screenshot-twitter.jpeg)
+
+![SplunkLive App Instagram](https://raw.githubusercontent.com/himynamesdave/splunklive_splunk_app/master/static/screenshot-instagram.jpeg)
 
 An app that visualises Tweets / Instagram images containing #splunklive & #splunk.
 
