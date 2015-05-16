@@ -26,6 +26,8 @@ This will install the official REST API modular input created by Damien Dallimor
 
 [Instructions on how to do this here: steps 1-2](http://blogs.splunk.com/2014/07/03/splunking-social-media-tracking-tweets/).
 
+[You can also use these keys (Splunkers only)](https://splunk.box.com/s/53rcjqta5iiujecjkm6q7nonbz8sgoqc)
+
 **Add your Twitter API kets to the to the "SplunkLiveTwitterFeed" REST input**
 
 To do this navigate to Settings > Data Inputs > REST > "SplunkLiveTwitterFeed".
@@ -41,38 +43,18 @@ To do this navigate to Settings > Data Inputs > REST. For the "SplunkLiveTwitter
 
 ##Configure Instagram Feed
 
+**Get your Instagram API keys**
+
+[Instructions on how to do this here: steps 1-2](http://blogs.splunk.com/2015/05/15/instasplunk/).
+
+[You can also use these keys (Splunkers only)](https://splunk.box.com/s/53rcjqta5iiujecjkm6q7nonbz8sgoqc)
+
 **Get an account**
 
 [Create a developer account with Instagram](https://instagram.com/developer).
 
-**Create an app**
 
-[Register a client to obtain your Instagram Client ID and Client Secret](https://instagram.com/developer/clients/register/).
-
-For website and redirect URL you can set: www.splunk.com
-
-The Splunk app for Instagram uses implicit authentication so you have to un-check the checkbox "Disable implicit Oauth" (under security tab).
-
-**Obtain your Instagram Access Token**
-
-The entire process is described on this page](https://instagram.com/developer/authentication/)
-
-As we are using implicit authentication you can skip to the section called "Client-Side (implicit) authentication" which is described below under 3.1 and 3.2.
-
-In a browser paste the following URL, with CLIENT-ID and REDIRECT-URI replaced with the values created earlier:
-
-https://instagram.com/oauth/authorize/?client_id=CLIENT-ID&redirect_uri=REDIRECT-URI&response_type=token
-
-At this point, you are presented with a login screen and then a confirmation screen where you will approve your app’s access to your Instagram data. Note, that unlike the explicit flow the response type here is "token".
-
-**Receive the access_token from the URL**
-
-Once you have authenticated and then authorized your application, we’ll redirect them to your redirect_uri with the access_token now in the url. It’ll look like so:
-http://your-redirect-uri#access_token=ACCESS-TOKEN
-
-Simply copy the access_token off the URL token.
-
-**Edit input**
+**Add your Instagram API kets to the to the "SplunkInstagramFeed" / "SplunkInstagramFeed" REST input**
 
 Add your Instagram API kets to the to the "SplunkInstagramFeed" and "SplunkInstagramFeed" REST input. To do this navigate to Settings > Data Inputs > REST > "SplunkInstagramFeed" / "SplunkInstagramFeed".
 
