@@ -22,7 +22,7 @@ Copy the folder SPLUNK HOME/etc/apps/splunklive_splunk_app/install/rest_ta to SP
 
 This will install the official REST API modular input created by Damien Dallimore that is used for connecting to the Instagram API. This version of rest_ta includes some custom python response handlers to handle the Instagram API json format. These are not included in the REST API Modular input app that can be found on Splunkbase.
 
-If you have downloaded the app from the Box link above, all you need to do now is "Enable Inputs" in: Settings > Data Inputs > REST. Configoration is now complete.
+If you have downloaded the app from the Box link above, all you need to do now is "Enable Inputs" in: Settings > Data Inputs > REST. Config is now complete.
 
 If you did not download the app from the Box link above, follow the instructions below.
 
