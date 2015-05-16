@@ -12,13 +12,19 @@ An app that visualises Tweets / Instagram images containing #splunklive & #splun
 
 **Get the app**
 
-Download and install the Splunk>live! App (https://github.com/himynamesdave/splunklive_splunk_app/raw/master/splunklive_splunk_app.tar.gz) onto your Splunk Instance.
+[Download and install the Splunk>live! App](https://splunk.box.com/s/500egwvwy7ifsa09t1k3rjw56j79feq4) (Splunkers only) onto your Splunk Instance.
+
+If you are not a Splunker, you can copy this repository into your Splunk Instances app directory: $SPLUNK HOME > etc > apps
 
 **Install the "REST API Modular Input app**
 
 Copy the folder SPLUNK HOME/etc/apps/splunklive_splunk_app/install/rest_ta to SPLUNK HOME/etc/apps/
 
-This will install the official REST API modular input created by Damien Dallimore that is used for connecting to the Instagram API. This version of rest_ta includes some custom python response handlers to handle the Instagram API json format. These are not included in the REST API Modular input app that can be found on Splunkbase. 
+This will install the official REST API modular input created by Damien Dallimore that is used for connecting to the Instagram API. This version of rest_ta includes some custom python response handlers to handle the Instagram API json format. These are not included in the REST API Modular input app that can be found on Splunkbase.
+
+If you have downloaded the app from the Box link above, all you need to do now is "Enable Inputs" in: Settings > Data Inputs > REST. Configoration is now complete.
+
+If you did not download the app from the Box link above, follow the instructions below.
 
 ##Configure Twitter Feed
 
@@ -46,13 +52,6 @@ To do this navigate to Settings > Data Inputs > REST. For the "SplunkLiveTwitter
 **Get your Instagram API keys**
 
 [Instructions on how to do this here: steps 1-2](http://blogs.splunk.com/2015/05/15/instasplunk/).
-
-[You can also use these keys (Splunkers only)](https://splunk.box.com/s/53rcjqta5iiujecjkm6q7nonbz8sgoqc)
-
-**Get an account**
-
-[Create a developer account with Instagram](https://instagram.com/developer).
-
 
 **Add your Instagram API kets to the to the "SplunkInstagramFeed" / "SplunkInstagramFeed" REST input**
 
