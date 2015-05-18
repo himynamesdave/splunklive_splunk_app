@@ -1,5 +1,7 @@
 <nav search_view="search" color="#65A637">
   <view name="twitter_stream" default='true' />
   <view name="instagram_stream" />
-  <view name="competition_winners" />
+  <collection label="Extras">
+  	<view name="competition_winners" />
+  </collection>
 </nav>
