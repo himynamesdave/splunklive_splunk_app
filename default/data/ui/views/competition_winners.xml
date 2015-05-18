@@ -1,5 +1,5 @@
 <form>
-  <label>User Group Competition Winners</label>
+  <label>Random User Selector</label>
   <fieldset submitButton="true">
     <input type="time" token="field1">
       <label></label>
@@ -11,38 +11,27 @@
   </fieldset>
   <row>
     <panel>
-      <title>and the Twitter winner is...</title>
-      <single>
+      <title>index=* | dedup _time | eval Random=random() | sort - Random | head 1</title>
+      <event>
         <search>
-          <query>index=splunklive | dedup user.name | eval Random=random() | sort - Random | head 1 | table user.name</query>
+          <query>index=splunklive | dedup _time | eval Random=random() | sort - Random | head 1</query>
           <earliest>$field1.earliest$</earliest>
           <latest>$field1.latest$</latest>
         </search>
         <option name="wrap">true</option>
-        <option name="rowNumbers">false</option>
+        <option name="rowNumbers">0</option>
         <option name="dataOverlayMode">none</option>
-        <option name="drilldown">none</option>
-        <option name="count">10</option>
         <option name="linkView">search</option>
-      </single>
-    </panel>
-  </row>
-  <row>
-    <panel>
-      <title>and the Instagram winner is...</title>
-      <single>
-        <search>
-          <query>index=instagram | dedup user.full_name | eval Random=random() | sort - Random | head 1 | table user.full_name</query>
-          <earliest>$field1.earliest$</earliest>
-          <latest>$field1.latest$</latest>
-        </search>
-        <option name="wrap">true</option>
-        <option name="rowNumbers">false</option>
-        <option name="dataOverlayMode">none</option>
-        <option name="drilldown">none</option>
+        <option name="list.drilldown">full</option>
+        <option name="list.wrap">1</option>
+        <option name="maxLines">5</option>
+        <option name="raw.drilldown">full</option>
+        <option name="table.drilldown">all</option>
+        <option name="table.wrap">1</option>
+        <option name="type">list</option>
         <option name="count">10</option>
-        <option name="linkView">search</option>
-      </single>
+        <fields>["host","source","sourcetype"]</fields>
+      </event>
     </panel>
   </row>
 </form>
