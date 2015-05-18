@@ -12,7 +12,7 @@ An app that visualises Tweets / Instagram images containing #splunklive & #splun
 
 **Get the app**
 
-[Download and install the Splunk>live! App](https://splunk.box.com/s/500egwvwy7ifsa09t1k3rjw56j79feq4) (Splunkers only) onto your Splunk Instance.
+[Download and install the Splunk>live! App](https://splunk.box.com/s/kg0fg64w48k4plj05s4v3ngrvi8x9clv) (Splunkers only) onto your Splunk Instance.
 
 If you are not a Splunker, you can copy this repository into your Splunk Instances app directory: $SPLUNK HOME > etc > apps
 
@@ -32,7 +32,7 @@ If you did not download the app from the Box link above, follow the instructions
 
 [Instructions on how to do this here: steps 1-2](http://blogs.splunk.com/2014/07/03/splunking-social-media-tracking-tweets/).
 
-[You can also use these keys (Splunkers only)](https://splunk.box.com/s/53rcjqta5iiujecjkm6q7nonbz8sgoqc)
+[You can also use these keys (Splunkers only)](https://splunk.box.com/s/qkjsk55anrswmkmthhavuhgtwv1b5520)
 
 **Add your Twitter API kets to the to the "SplunkLiveTwitterFeed" REST input**
 
@@ -52,6 +52,8 @@ To do this navigate to Settings > Data Inputs > REST. For the "SplunkLiveTwitter
 **Get your Instagram API keys**
 
 [Instructions on how to do this here: steps 1-2](http://blogs.splunk.com/2015/05/15/instasplunk/).
+
+[You can also use these keys (Splunkers only)](https://splunk.box.com/s/qkjsk55anrswmkmthhavuhgtwv1b5520)
 
 **Add your Instagram API kets to the to the "SplunkInstagramFeed" / "SplunkInstagramFeed" REST input**
 
